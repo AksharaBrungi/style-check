@@ -1,0 +1,34 @@
+{
+  "collections": {
+    "reports": {
+      "fields": {
+        "userId": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "detectedPerson": { "type": "boolean" },
+        "fashionStyle": { "type": "string" },
+        "predictedOccasion": { "type": "string" },
+        "occasionConfidence": { "type": "number" },
+        "styleScore": { "type": "number" },
+        "explanation": { "type": "string" },
+        "needsOccasionClarification": { "type": "boolean" },
+        "dominantColors": { "type": "array" },
+        "detectedClothing": { "type": "array" },
+        "strengths": { "type": "array" },
+        "weaknesses": { "type": "array" },
+        "betterOutfits": { "type": "array" },
+        "suggestedAccessories": { "type": "array" },
+        "suggestedFootwear": { "type": "array" },
+        "suggestedHairstyles": { "type": "array" }
+      },
+      "indexes": [
+        {
+          "fields": [
+            { "fieldPath": "userId", "order": "ASCENDING" },
+            { "fieldPath": "createdAt", "order": "DESCENDING" }
+          ]
+        }
+      ]
+    }
+  }
+}

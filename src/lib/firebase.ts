@@ -1,0 +1,31 @@
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getAuth, signInAnonymously, onAuthStateChanged, User } from 'firebase/auth';
+import { initializeFirestore, getFirestore } from 'firebase/firestore';
+
+// Inlined config from /firebase-applet-config.json
+const firebaseConfig = {
+  projectId: "perceptive-manifest-ftn3v",
+  appId: "1:1091723691986:web:f4e2c64709216780e2aa0b",
+  apiKey: "AIzaSyAM81WfMUT1GNauXVK-hdA-z0wD_otQ35o",
+  authDomain: "perceptive-manifest-ftn3v.firebaseapp.com",
+  firestoreDatabaseId: "ai-studio-stylecheck-b91cc482-6f6b-48fe-9dc2-21b5cf8a7eb8",
+  storageBucket: "perceptive-manifest-ftn3v.firebasestorage.app",
+  messagingSenderId: "1091723691986",
+  measurementId: ""
+};
+
+let app;
+let auth: any;
+let db: any;
+
+try {
+  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+  auth = getAuth(app);
+  
+  // Custom database ID support
+  db = initializeFirestore(app, {}, firebaseConfig.firestoreDatabaseId || "(default)");
+} catch (error) {
+  console.error("Firebase initialization error:", error);
+}
+
+export { app, auth, db };

@@ -1,0 +1,6 @@
+{
+  "name": "StyleCheck",
+  "description": "AI-Powered Fashion & Outfit Analysis Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
